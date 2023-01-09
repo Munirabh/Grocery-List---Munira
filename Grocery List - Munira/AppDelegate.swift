@@ -6,16 +6,31 @@
 //
 
 import UIKit
+import FirebaseCore
+import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+  var window: UIWindow?
 
+  func application(_ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions:
+                   [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    FirebaseApp.configure()
+//      let firstWindow = Auth.auth().addStateDidChangeListener({ auth, user in
+//          let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//          if user != nil {
+//              let vc = storyBoard.instantiateViewController(withIdentifier: "GroceryList") as! GroceryList
+//              self.window?.rootViewController = vc
+//              self.window?.makeKeyAndVisible()
+//          } else {
+//
+//          }
+//      })
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
+    return true
+  }
 
     // MARK: UISceneSession Lifecycle
 

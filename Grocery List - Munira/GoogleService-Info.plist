@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>211956925965-6o6litj16noeukahfte1sik1mvj6sudf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.211956925965-6o6litj16noeukahfte1sik1mvj6sudf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnux5f7aJNzmpary0WPrljVS1vcUiGiIY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>211956925965</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Munira.Grocery-List---Munira</string>
+	<key>PROJECT_ID</key>
+	<string>grocery-list-73102</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grocery-list-73102.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:211956925965:ios:60b817b432d1ca9f6c7744</string>
+</dict>
+</plist>

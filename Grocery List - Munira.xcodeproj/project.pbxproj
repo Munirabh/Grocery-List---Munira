@@ -7,23 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1EA24A296AFF7B007F3C9F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EA249296AFF7B007F3C9F /* Data.swift */; };
+		AF1EA257296B5BD1007F3C9F /* FamilyUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EA256296B5BD1007F3C9F /* FamilyUsersCell.swift */; };
+		AF1EA25A296C9044007F3C9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF1EA259296C9044007F3C9F /* FirebaseAuth */; };
+		AF1EA25C296C9044007F3C9F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AF1EA25B296C9044007F3C9F /* FirebaseDatabase */; };
+		AF1EA25E296C9044007F3C9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF1EA25D296C9044007F3C9F /* FirebaseFirestore */; };
 		AF32A2FA296A99C400C57B91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A2F9296A99C400C57B91 /* AppDelegate.swift */; };
 		AF32A2FC296A99C400C57B91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A2FB296A99C400C57B91 /* SceneDelegate.swift */; };
-		AF32A2FE296A99C400C57B91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A2FD296A99C400C57B91 /* ViewController.swift */; };
+		AF32A2FE296A99C400C57B91 /* LoginAndSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A2FD296A99C400C57B91 /* LoginAndSignUp.swift */; };
 		AF32A301296A99C400C57B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32A2FF296A99C400C57B91 /* Main.storyboard */; };
 		AF32A303296A99C500C57B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF32A302296A99C500C57B91 /* Assets.xcassets */; };
 		AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32A304296A99C500C57B91 /* LaunchScreen.storyboard */; };
+		AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30D296A9EE200C57B91 /* GroceryList.swift */; };
+		AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30F296A9F0D00C57B91 /* FamilyList.swift */; };
+		AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF592DC9296AA90000D04561 /* GoogleService-Info.plist */; };
+		AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF592DCB296AE51600D04561 /* GroceryListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1EA249296AFF7B007F3C9F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AF1EA256296B5BD1007F3C9F /* FamilyUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyUsersCell.swift; sourceTree = "<group>"; };
 		AF32A2F6296A99C400C57B91 /* Grocery List - Munira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery List - Munira.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF32A2F9296A99C400C57B91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF32A2FB296A99C400C57B91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF32A2FD296A99C400C57B91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF32A2FD296A99C400C57B91 /* LoginAndSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUp.swift; sourceTree = "<group>"; };
 		AF32A300296A99C400C57B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF32A302296A99C500C57B91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF32A305296A99C500C57B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF32A307296A99C500C57B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF32A30D296A9EE200C57B91 /* GroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryList.swift; sourceTree = "<group>"; };
+		AF32A30F296A9F0D00C57B91 /* FamilyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyList.swift; sourceTree = "<group>"; };
+		AF592DC9296AA90000D04561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF592DCB296AE51600D04561 /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1EA25C296C9044007F3C9F /* FirebaseDatabase in Frameworks */,
+				AF1EA25A296C9044007F3C9F /* FirebaseAuth in Frameworks */,
+				AF1EA25E296C9044007F3C9F /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +74,37 @@
 		AF32A2F8296A99C400C57B91 /* Grocery List - Munira */ = {
 			isa = PBXGroup;
 			children = (
+				AF32A318296AA1B800C57B91 /* ViewController */,
 				AF32A2F9296A99C400C57B91 /* AppDelegate.swift */,
 				AF32A2FB296A99C400C57B91 /* SceneDelegate.swift */,
-				AF32A2FD296A99C400C57B91 /* ViewController.swift */,
 				AF32A2FF296A99C400C57B91 /* Main.storyboard */,
 				AF32A302296A99C500C57B91 /* Assets.xcassets */,
 				AF32A304296A99C500C57B91 /* LaunchScreen.storyboard */,
+				AF592DC9296AA90000D04561 /* GoogleService-Info.plist */,
 				AF32A307296A99C500C57B91 /* Info.plist */,
 			);
 			path = "Grocery List - Munira";
+			sourceTree = "<group>";
+		};
+		AF32A318296AA1B800C57B91 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF592DCD296AE52900D04561 /* CellController */,
+				AF32A30D296A9EE200C57B91 /* GroceryList.swift */,
+				AF32A30F296A9F0D00C57B91 /* FamilyList.swift */,
+				AF32A2FD296A99C400C57B91 /* LoginAndSignUp.swift */,
+				AF1EA249296AFF7B007F3C9F /* Data.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AF592DCD296AE52900D04561 /* CellController */ = {
+			isa = PBXGroup;
+			children = (
+				AF1EA256296B5BD1007F3C9F /* FamilyUsersCell.swift */,
+				AF592DCB296AE51600D04561 /* GroceryListCell.swift */,
+			);
+			path = CellController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +123,11 @@
 			dependencies = (
 			);
 			name = "Grocery List - Munira";
+			packageProductDependencies = (
+				AF1EA259296C9044007F3C9F /* FirebaseAuth */,
+				AF1EA25B296C9044007F3C9F /* FirebaseDatabase */,
+				AF1EA25D296C9044007F3C9F /* FirebaseFirestore */,
+			);
 			productName = "Grocery List - Munira";
 			productReference = AF32A2F6296A99C400C57B91 /* Grocery List - Munira.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +156,9 @@
 				Base,
 			);
 			mainGroup = AF32A2ED296A99C400C57B91;
+			packageReferences = (
+				AF1EA258296C9044007F3C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = AF32A2F7296A99C400C57B91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */,
+				AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */,
 				AF32A303296A99C500C57B91 /* Assets.xcassets in Resources */,
 				AF32A301296A99C400C57B91 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF32A2FE296A99C400C57B91 /* ViewController.swift in Sources */,
+				AF32A2FE296A99C400C57B91 /* LoginAndSignUp.swift in Sources */,
 				AF32A2FA296A99C400C57B91 /* AppDelegate.swift in Sources */,
 				AF32A2FC296A99C400C57B91 /* SceneDelegate.swift in Sources */,
+				AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */,
+				AF1EA257296B5BD1007F3C9F /* FamilyUsersCell.swift in Sources */,
+				AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */,
+				AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */,
+				AF1EA24A296AFF7B007F3C9F /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +341,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery List - Munira/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery List - Munira/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -356,6 +412,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF1EA258296C9044007F3C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 9.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF1EA259296C9044007F3C9F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF1EA258296C9044007F3C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AF1EA25B296C9044007F3C9F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF1EA258296C9044007F3C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		AF1EA25D296C9044007F3C9F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF1EA258296C9044007F3C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF32A2EE296A99C400C57B91 /* Project object */;
 }
