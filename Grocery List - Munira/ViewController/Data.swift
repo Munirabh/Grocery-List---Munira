@@ -19,9 +19,9 @@ struct Users : Codable {
     let id : String
 }
 struct Items : Codable {
-    let id: String
+    let id: String?
     let name : String
-    let addedByUser: String
+    let addedByUser: Users
 }
 struct UsersItems : Codable {
     let email : String

@@ -20,6 +20,8 @@
 		AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32A304296A99C500C57B91 /* LaunchScreen.storyboard */; };
 		AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30D296A9EE200C57B91 /* GroceryList.swift */; };
 		AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30F296A9F0D00C57B91 /* FamilyList.swift */; };
+		AF42C765296DEB2200D44EDF /* GroceryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42C763296DEB2200D44EDF /* GroceryCell.swift */; };
+		AF42C766296DEB2200D44EDF /* GroceryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF42C764296DEB2200D44EDF /* GroceryCell.xib */; };
 		AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF592DC9296AA90000D04561 /* GoogleService-Info.plist */; };
 		AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF592DCB296AE51600D04561 /* GroceryListCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		AF32A307296A99C500C57B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF32A30D296A9EE200C57B91 /* GroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryList.swift; sourceTree = "<group>"; };
 		AF32A30F296A9F0D00C57B91 /* FamilyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyList.swift; sourceTree = "<group>"; };
+		AF42C763296DEB2200D44EDF /* GroceryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryCell.swift; sourceTree = "<group>"; };
+		AF42C764296DEB2200D44EDF /* GroceryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroceryCell.xib; sourceTree = "<group>"; };
 		AF592DC9296AA90000D04561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF592DCB296AE51600D04561 /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 			children = (
 				AF592DCD296AE52900D04561 /* CellController */,
 				AF32A30D296A9EE200C57B91 /* GroceryList.swift */,
+				AF42C763296DEB2200D44EDF /* GroceryCell.swift */,
+				AF42C764296DEB2200D44EDF /* GroceryCell.xib */,
 				AF32A30F296A9F0D00C57B91 /* FamilyList.swift */,
 				AF32A2FD296A99C400C57B91 /* LoginAndSignUp.swift */,
 				AF1EA249296AFF7B007F3C9F /* Data.swift */,
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF42C766296DEB2200D44EDF /* GroceryCell.xib in Resources */,
 				AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */,
 				AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */,
 				AF32A303296A99C500C57B91 /* Assets.xcassets in Resources */,
@@ -191,6 +198,7 @@
 				AF32A2FA296A99C400C57B91 /* AppDelegate.swift in Sources */,
 				AF32A2FC296A99C400C57B91 /* SceneDelegate.swift in Sources */,
 				AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */,
+				AF42C765296DEB2200D44EDF /* GroceryCell.swift in Sources */,
 				AF1EA257296B5BD1007F3C9F /* FamilyUsersCell.swift in Sources */,
 				AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */,
 				AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */,

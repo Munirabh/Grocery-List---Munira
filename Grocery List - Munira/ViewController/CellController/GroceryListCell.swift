@@ -24,7 +24,7 @@ class GroceryListCell: UITableViewCell {
     }
     func set(item: Items){
         title.text = item.name
-        email.text = "\(item.addedByUser)"
+        email.text = "\(item.addedByUser.email)"
     }
 
 }

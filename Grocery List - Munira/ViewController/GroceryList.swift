@@ -22,6 +22,7 @@ class GroceryList: UIViewController {
     var items = [Items]() ///
     var itemsArr = [String]()
     var currentUser : Users?
+    var spaceBetweenCells = 100.0
     var ref = DatabaseReference.init()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,8 @@ class GroceryList: UIViewController {
         // add left button in navigation bar
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon"), style: .done, target: self, action: #selector(self.familyUsers(_:)))
       
+        observeItems()
+        tableView.allowsMultipleSelectionDuringEditing = true
     }
     @objc func familyUsers(_ sender: UIBarButtonItem){
 
@@ -95,12 +98,31 @@ class GroceryList: UIViewController {
      
 
     }
-    func fetchUsersAndItems(){
-
+   
+    func observeItems(){
+        let itemRef = Database.database().reference().child("items")
+        itemRef.observe(.value, with: { snapshot in
+            var tempItems = [Items]()
+            for child in snapshot.children {
+                if let childsnapshot = child as? DataSnapshot,
+                   let dict = childsnapshot.value as? [String: Any],
+                   let addedByUser = dict["addedByUser"] as? [String:Any],
+                   let uid = addedByUser["uid"] as? String,
+                   let email = addedByUser["email"] as? String,
+                   let name = dict["name"] as? String{
+                    let userItem = Users(email: email, password: "", id: uid)
+                    let items = Items(id: childsnapshot.key, name: name, addedByUser: userItem)
+                    tempItems.append(items)
+                }
+            }
+            DispatchQueue.main.async {
+                self.items = tempItems
+                self.tableView.reloadData()
+            }
+        })
     }
-    
   
-
+    
 
 }
 //MARK: - table view data source
@@ -112,22 +134,35 @@ extension GroceryList : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryListCell", for: indexPath) as! GroceryListCell
         cell.set(item: items[indexPath.row])
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 30
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       if editingStyle == .delete {
-           items.remove(at: indexPath.row)
-           tableView.deleteRows(at: [indexPath], with: .fade)
-           tableView.endUpdates()
-           self.tableView.reloadData()
-       }
+        let deleteItem = self.items[indexPath.row]
+        
+        if let itemId = deleteItem.id {
+            Database.database().reference().child("items").child(itemId).removeValue { error , ref in
+                if error != nil {
+                    print("failed to delete", error!)
+                    return
+                }
+                self.items.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.tableView.reloadData()
+            }
+        }
    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 //    func numberOfSections(in tableView: UITableView) -> Int {
 //        return itemsArr.count
