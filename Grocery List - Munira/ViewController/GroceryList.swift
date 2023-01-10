@@ -19,8 +19,10 @@ class GroceryList: UIViewController {
     
     //MARK: - var
     var family = [Users]()
-    var items = [Items]()
+    var items = [Items]() ///
+    var itemsArr = [String]()
     var currentUser : Users?
+    var ref = DatabaseReference.init()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +33,8 @@ class GroceryList: UIViewController {
     func setUpVew(){
         self.navigationItem.setHidesBackButton(true, animated: true)
         tableView.dataSource = self
-        fetchData()
+        tableView.delegate = self
+        self.ref = Database.database().reference()
         // add title
         self.title = "Groceries to Buy"
         
@@ -62,7 +65,7 @@ class GroceryList: UIViewController {
             let itemTextField = alertController.textFields![0] as UITextField
             let itemName = itemTextField.text
             handleAddItems(itemTextField)
-//            items.append(itemName)
+            self.itemsArr.append(itemName!)
             self.tableView.reloadData()
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -72,57 +75,36 @@ class GroceryList: UIViewController {
         
         self.present(alertController, animated: true)
     }
+    
     func handleAddItems(_ textField: UITextField){
-        guard let thisUser = UserData.currentUser else { return}
+        guard let userItems = UserData.currentUser else { return }
         let ref = Database.database().reference().child("items").childByAutoId()
         let itemObject = [
-//                "id": thisUser.id,
-//                "email":thisUser.email  ,
-            "text" : textField.text! ] 
-        
+            "addedByUser": [
+                "uid" : userItems.id,
+                "email": userItems.email],
+            "name" : textField.text!] as [String : Any]
         ref.setValue(itemObject, withCompletionBlock: { error, reference in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
+                print("\(String(describing: error))")
             } else {
                 
             }
         })
-    }
-   
-    //MARK: - fetch data
-    func fetchData(){
-            var ref:DatabaseReference!
-            ref = Database.database().reference()
-                ref.child("GroceryLists").observe(.value) { result, error in
-                 let currentUser = Auth.auth().currentUser?.uid
-//                 let users = result.value as! NSDictionary
-           
-//                     for person in users{
-//                         let personID = "\(person.key)"
-//
-//                         if personID != currentUser {
-//                            let thrPerson = person.value as! NSDictionary
-//
-////                             let newUser = User( email: thrPerson["email"] as! String, password: thrPerson["password"] as! String, id: "\(person.key)")
-//
-////                            self.family.append(newUser)
-//                        }
+     
 
-//                     }
-                 
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-   
-                 
-        }
-     }
+    }
+    func fetchUsersAndItems(){
+
+    }
     
+  
 
 
 }
 //MARK: - table view data source
-extension GroceryList : UITableViewDataSource {
+extension GroceryList : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -130,7 +112,7 @@ extension GroceryList : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryListCell", for: indexPath) as! GroceryListCell
         cell.set(item: items[indexPath.row])
-       
+        cell.layer.cornerRadius = 10
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -138,13 +120,23 @@ extension GroceryList : UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        if editingStyle == .delete {
-//           sportsArr.remove(at: indexPath.row)
+           items.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: .fade)
            tableView.endUpdates()
            self.tableView.reloadData()
        }
    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return itemsArr.count
+//    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.backgroundColor = view.backgroundColor
+//
+//        return headerView
+//    }
 }
-extension GroceryList : UITableViewDelegate {
 
-}

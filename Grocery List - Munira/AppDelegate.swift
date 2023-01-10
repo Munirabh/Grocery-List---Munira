@@ -18,16 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions:
                    [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
-//      let firstWindow = Auth.auth().addStateDidChangeListener({ auth, user in
-//          let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//          if user != nil {
-//              let vc = storyBoard.instantiateViewController(withIdentifier: "GroceryList") as! GroceryList
-//              self.window?.rootViewController = vc
-//              self.window?.makeKeyAndVisible()
-//          } else {
-//
-//          }
-//      })
+      let authListener = Auth.auth().addStateDidChangeListener { auth, user in
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          if user != nil {
+              UserData.observeUsers(user!.uid) { userItems in
+                  UserData.currentUser = userItems
+              }
+              let vc = storyboard.instantiateViewController(withIdentifier: "GroceryList") as! GroceryList
+              self.window?.rootViewController = vc
+              self.window?.makeKeyAndVisible()
+          } else {
+              UserData.currentUser = nil
+          }
+      }
 
     return true
   }

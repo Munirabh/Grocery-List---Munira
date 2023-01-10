@@ -24,6 +24,7 @@ class LoginAndSignUp: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var buttonStack: UIStackView!
     
+    var ref = DatabaseReference.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -36,6 +37,8 @@ class LoginAndSignUp: UIViewController {
     }
     //MARK: - set up view
     func setUpView(){
+        self.ref = Database.database().reference()
+
         constraints()
         self.errorMessege.isHidden = true
         let textFieldStyle = NSMutableParagraphStyle()
@@ -73,16 +76,59 @@ class LoginAndSignUp: UIViewController {
     
     //MARK: - Sign up button
     @IBAction func signUpButton(_ sender: UIButton) {
+        handleSignup()
+//        guard let email = emailTextField.text else { return }
+//        guard let password = passwordTextField.text else { return }
+//
+//        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { user, error in
+//            if  error == nil && user != nil {
+//                print("user created")
+//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                changeRequest?.displayName = self.emailTextField.text
+//                changeRequest?.commitChanges{ error in
+//                    if error == nil {
+//                        print("user display name changed")
+//                        self.saveEmail(email: self.emailTextField.text!) { success in
+//                            if success {
+//                                self.dismiss(animated: true, completion: nil)
+//                            }
+//                        }
+//                        self.dismiss(animated: false, completion: nil)
+//                    } else {
+//                        print("error : \(error!.localizedDescription)")
+//                    }
+//                }
+//            } else {
+//
+//            }
+//        }
+    }
+    func saveEmail(email: String, completion: @escaping ((_ success: Bool)->())){
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("Users/\(uid)")
+        let userObject = [ "email" : email ] as [String:Any]
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil )
+        }
+    }
+    func handleSignup(){
         FirebaseAuth.Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, error in
             if error != nil {
                 self.errorMessege.isHidden = false
                 self.errorMessege.text = "⚠ \(error!.localizedDescription)"
+                self.saveEmail(email: self.emailTextField.text!) { success in
+                    if success {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
             } else {
                 let newUser = Users( email: self.emailTextField.text!, password: self.passwordTextField.text!, id: "\(result!.user.uid)")
                 var referance : DatabaseReference!
                 referance = Database.database().reference()
                 referance.child("users").child(newUser.id).setValue(["email" : newUser.email, "password" : newUser.password])
                 print("user createrd")
+                self.errorMessege.isHidden = true
+
             }
         }
     }

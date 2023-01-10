@@ -23,19 +23,24 @@ struct Items : Codable {
     let name : String
     let addedByUser: String
 }
+struct UsersItems : Codable {
+    let email : String
+    let id : String
+}
 
 struct GroceryItems : Codable {
     let items : Items
 }
 
 class UserData {
-   static var currentUser: Users?
-    static func observeUsers(_ id: String, completion: @escaping ((_ users: Users?) -> ())) {
+   static var currentUser: UsersItems?
+    static func observeUsers(_ id: String, completion: @escaping ((_ users: UsersItems?) -> ())) {
         let userRef = Database.database().reference().child("users/\(id)")
         userRef.observe(.value, with: { snapshot in
-            var users: Users?
-            if let dict = snapshot.value as? [String: Any],                                                                                              let email = dict["email"] as? String {
-                users = Users(email: email, password: "", id: snapshot.key)
+            var users: UsersItems?
+            if let dict = snapshot.value as? [String: Any],
+                let email = dict["email"] as? String {
+                users = UsersItems(email: email, id: snapshot.key)
             }
                 completion(users)
         })
