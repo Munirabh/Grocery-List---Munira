@@ -8,21 +8,22 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FBSDKLoginKit
 
 class LoginAndSignUp: UIViewController {
 
     //MARK: - outlets
     @IBOutlet weak var vegImage: UIImageView!
-    @IBOutlet weak var errorMessege: UILabel!
+    @IBOutlet weak var errorMessege: UILabel! // show error while log in and sign up
     @IBOutlet weak var healthyImg: UIImageView!
     @IBOutlet weak var farmerImg: UIImageView!
-    @IBOutlet weak var epStack: UIStackView!
+    @IBOutlet weak var epStack: UIStackView! // email and password stack view
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logIn: UIButton!
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var buttonStack: UIStackView!
+    @IBOutlet weak var buttonStack: UIStackView! // log in and sign up stack view
     
     var ref = DatabaseReference.init()
     override func viewDidLoad() {
@@ -31,10 +32,6 @@ class LoginAndSignUp: UIViewController {
         
     }
  
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
     //MARK: - set up view
     func setUpView(){
         self.ref = Database.database().reference()
@@ -50,11 +47,32 @@ class LoginAndSignUp: UIViewController {
         passwordTextField.placeholder = "Password"
         passwordTextField.textAlignment = .center
         passwordTextField.isSecureTextEntry = true
-        
+        facebookLogIn()
         self.navigationItem.setHidesBackButton(true, animated: true)
-
+      
     }
-    
+    // MARK: - anchors for facebook log in button
+    func viewAnchors(_ loginButton: UIButton) {
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+        ])
+    }
+    // MARK: - facebook log in button
+    func facebookLogIn(){
+        
+        let loginButton = FBLoginButton()
+        self.view.addSubview(loginButton)
+        self.viewAnchors(loginButton)
+        self.view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            // Print out access token
+            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+        }
+    }
+    @IBAction func googleButton(_ sender: UIButton) {
+    }
     
     //MARK: - login button
     @IBAction func logInButton(_ sender: UIButton) {
@@ -77,32 +95,9 @@ class LoginAndSignUp: UIViewController {
     //MARK: - Sign up button
     @IBAction func signUpButton(_ sender: UIButton) {
         handleSignup()
-//        guard let email = emailTextField.text else { return }
-//        guard let password = passwordTextField.text else { return }
-//
-//        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { user, error in
-//            if  error == nil && user != nil {
-//                print("user created")
-//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-//                changeRequest?.displayName = self.emailTextField.text
-//                changeRequest?.commitChanges{ error in
-//                    if error == nil {
-//                        print("user display name changed")
-//                        self.saveEmail(email: self.emailTextField.text!) { success in
-//                            if success {
-//                                self.dismiss(animated: true, completion: nil)
-//                            }
-//                        }
-//                        self.dismiss(animated: false, completion: nil)
-//                    } else {
-//                        print("error : \(error!.localizedDescription)")
-//                    }
-//                }
-//            } else {
-//
-//            }
-//        }
     }
+    
+    //MARK: - save email in firebase
     func saveEmail(email: String, completion: @escaping ((_ success: Bool)->())){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let databaseRef = Database.database().reference().child("Users/\(uid)")
@@ -111,6 +106,7 @@ class LoginAndSignUp: UIViewController {
             completion(error == nil )
         }
     }
+    //MARK: - sign up func
     func handleSignup(){
         FirebaseAuth.Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, error in
             if error != nil {
@@ -155,21 +151,21 @@ extension LoginAndSignUp {
         buttonStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         vegImage.translatesAutoresizingMaskIntoConstraints = false
-        vegImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 550).isActive = true
-        vegImage.widthAnchor.constraint(equalToConstant: 170).isActive = true
-        vegImage.heightAnchor.constraint(equalToConstant: 85).isActive = true
-        vegImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50).isActive = true
+        vegImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 600).isActive = true
+        vegImage.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        vegImage.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        vegImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60).isActive = true
         
         healthyImg.translatesAutoresizingMaskIntoConstraints = false
-        healthyImg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -150).isActive = true
-        healthyImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 550).isActive = true
-        healthyImg.widthAnchor.constraint(equalToConstant: 170).isActive = true
-        healthyImg.heightAnchor.constraint(equalToConstant: 85).isActive = true
+        healthyImg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -170).isActive = true
+        healthyImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 600).isActive = true
+        healthyImg.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        healthyImg.heightAnchor.constraint(equalToConstant: 65).isActive = true
         
         farmerImg.translatesAutoresizingMaskIntoConstraints = false
         farmerImg.centerXAnchor.constraint(equalTo: view.centerXAnchor ).isActive = true
-        farmerImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 500).isActive = true
-        farmerImg.widthAnchor.constraint(equalToConstant: 130).isActive = true
-        farmerImg.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        farmerImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 550).isActive = true
+        farmerImg.widthAnchor.constraint(equalToConstant: 110).isActive = true
+        farmerImg.heightAnchor.constraint(equalToConstant: 130).isActive = true
     }
 }

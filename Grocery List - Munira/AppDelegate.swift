@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import FirebaseCore
 import Firebase
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions:
                    [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
+      ApplicationDelegate.shared.application(
+          application,
+          didFinishLaunchingWithOptions: launchOptions
+      )
       let authListener = Auth.auth().addStateDidChangeListener { auth, user in
           let storyboard = UIStoryboard(name: "Main", bundle: nil)
           if user != nil {
@@ -34,7 +38,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     return true
   }
-
+    func application(
+           _ app: UIApplication,
+           open url: URL,
+           options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+       ) -> Bool {
+           ApplicationDelegate.shared.application(
+               app,
+               open: url,
+               sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+               annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+           )
+       }
+   
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

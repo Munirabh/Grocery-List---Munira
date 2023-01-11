@@ -8,11 +8,7 @@
 import Foundation
 import FirebaseDatabase
 
-struct GroceryLists : Codable {
-    let item: Items
-    let email : Users
-    let id : String
-}
+
 struct Users : Codable {
     let email : String
     let password: String
@@ -28,9 +24,6 @@ struct UsersItems : Codable {
     let id : String
 }
 
-struct GroceryItems : Codable {
-    let items : Items
-}
 
 class UserData {
    static var currentUser: UsersItems?

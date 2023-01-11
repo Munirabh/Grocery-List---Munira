@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124BFCD7014F8BBCD0EB5F6F /* Pods_Grocery_List___Munira.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10554768295DE56C1E65DDA0 /* Pods_Grocery_List___Munira.framework */; };
 		AF1EA24A296AFF7B007F3C9F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EA249296AFF7B007F3C9F /* Data.swift */; };
 		AF1EA257296B5BD1007F3C9F /* FamilyUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EA256296B5BD1007F3C9F /* FamilyUsersCell.swift */; };
 		AF1EA25A296C9044007F3C9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF1EA259296C9044007F3C9F /* FirebaseAuth */; };
@@ -20,13 +21,15 @@
 		AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32A304296A99C500C57B91 /* LaunchScreen.storyboard */; };
 		AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30D296A9EE200C57B91 /* GroceryList.swift */; };
 		AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32A30F296A9F0D00C57B91 /* FamilyList.swift */; };
-		AF42C765296DEB2200D44EDF /* GroceryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42C763296DEB2200D44EDF /* GroceryCell.swift */; };
-		AF42C766296DEB2200D44EDF /* GroceryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF42C764296DEB2200D44EDF /* GroceryCell.xib */; };
 		AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF592DC9296AA90000D04561 /* GoogleService-Info.plist */; };
 		AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF592DCB296AE51600D04561 /* GroceryListCell.swift */; };
+		AFE5CC81296F081F0092C214 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE5CC80296F081F0092C214 /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10554768295DE56C1E65DDA0 /* Pods_Grocery_List___Munira.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Grocery_List___Munira.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		618B76BA13C8CEDF5E228FDF /* Pods-Grocery List - Munira.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery List - Munira.debug.xcconfig"; path = "Target Support Files/Pods-Grocery List - Munira/Pods-Grocery List - Munira.debug.xcconfig"; sourceTree = "<group>"; };
+		A7053C0306586307FABD82DF /* Pods-Grocery List - Munira.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery List - Munira.release.xcconfig"; path = "Target Support Files/Pods-Grocery List - Munira/Pods-Grocery List - Munira.release.xcconfig"; sourceTree = "<group>"; };
 		AF1EA249296AFF7B007F3C9F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AF1EA256296B5BD1007F3C9F /* FamilyUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyUsersCell.swift; sourceTree = "<group>"; };
 		AF32A2F6296A99C400C57B91 /* Grocery List - Munira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery List - Munira.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +42,10 @@
 		AF32A307296A99C500C57B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF32A30D296A9EE200C57B91 /* GroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryList.swift; sourceTree = "<group>"; };
 		AF32A30F296A9F0D00C57B91 /* FamilyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyList.swift; sourceTree = "<group>"; };
-		AF42C763296DEB2200D44EDF /* GroceryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryCell.swift; sourceTree = "<group>"; };
-		AF42C764296DEB2200D44EDF /* GroceryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroceryCell.xib; sourceTree = "<group>"; };
 		AF592DC9296AA90000D04561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF592DCB296AE51600D04561 /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
+		AFE5CC7F296EE2EF0092C214 /* Grocery List - Munira.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Grocery List - Munira.entitlements"; sourceTree = "<group>"; };
+		AFE5CC80296F081F0092C214 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +56,37 @@
 				AF1EA25C296C9044007F3C9F /* FirebaseDatabase in Frameworks */,
 				AF1EA25A296C9044007F3C9F /* FirebaseAuth in Frameworks */,
 				AF1EA25E296C9044007F3C9F /* FirebaseFirestore in Frameworks */,
+				124BFCD7014F8BBCD0EB5F6F /* Pods_Grocery_List___Munira.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31BBE8BC987C68388946A6D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10554768295DE56C1E65DDA0 /* Pods_Grocery_List___Munira.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74042980192E3A9AAECE9B3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				618B76BA13C8CEDF5E228FDF /* Pods-Grocery List - Munira.debug.xcconfig */,
+				A7053C0306586307FABD82DF /* Pods-Grocery List - Munira.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF32A2ED296A99C400C57B91 = {
 			isa = PBXGroup;
 			children = (
 				AF32A2F8296A99C400C57B91 /* Grocery List - Munira */,
 				AF32A2F7296A99C400C57B91 /* Products */,
+				74042980192E3A9AAECE9B3D /* Pods */,
+				31BBE8BC987C68388946A6D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,10 +101,13 @@
 		AF32A2F8296A99C400C57B91 /* Grocery List - Munira */ = {
 			isa = PBXGroup;
 			children = (
+				AFE5CC7F296EE2EF0092C214 /* Grocery List - Munira.entitlements */,
 				AF32A318296AA1B800C57B91 /* ViewController */,
 				AF32A2F9296A99C400C57B91 /* AppDelegate.swift */,
+				AFD83286296F247A00A768A0 /* model */,
 				AF32A2FB296A99C400C57B91 /* SceneDelegate.swift */,
 				AF32A2FF296A99C400C57B91 /* Main.storyboard */,
+				AFE5CC80296F081F0092C214 /* SignUp.swift */,
 				AF32A302296A99C500C57B91 /* Assets.xcassets */,
 				AF32A304296A99C500C57B91 /* LaunchScreen.storyboard */,
 				AF592DC9296AA90000D04561 /* GoogleService-Info.plist */,
@@ -93,13 +119,10 @@
 		AF32A318296AA1B800C57B91 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AF592DCD296AE52900D04561 /* CellController */,
-				AF32A30D296A9EE200C57B91 /* GroceryList.swift */,
-				AF42C763296DEB2200D44EDF /* GroceryCell.swift */,
-				AF42C764296DEB2200D44EDF /* GroceryCell.xib */,
-				AF32A30F296A9F0D00C57B91 /* FamilyList.swift */,
 				AF32A2FD296A99C400C57B91 /* LoginAndSignUp.swift */,
-				AF1EA249296AFF7B007F3C9F /* Data.swift */,
+				AF32A30D296A9EE200C57B91 /* GroceryList.swift */,
+				AF32A30F296A9F0D00C57B91 /* FamilyList.swift */,
+				AF592DCD296AE52900D04561 /* CellController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -113,6 +136,14 @@
 			path = CellController;
 			sourceTree = "<group>";
 		};
+		AFD83286296F247A00A768A0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AF1EA249296AFF7B007F3C9F /* Data.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF32A30A296A99C500C57B91 /* Build configuration list for PBXNativeTarget "Grocery List - Munira" */;
 			buildPhases = (
+				5650CED4886E74A8430FBC48 /* [CP] Check Pods Manifest.lock */,
 				AF32A2F2296A99C400C57B91 /* Sources */,
 				AF32A2F3296A99C400C57B91 /* Frameworks */,
 				AF32A2F4296A99C400C57B91 /* Resources */,
+				BAADBAFAC53D38C47A6982C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF42C766296DEB2200D44EDF /* GroceryCell.xib in Resources */,
 				AF32A306296A99C500C57B91 /* LaunchScreen.storyboard in Resources */,
 				AF592DCA296AA90000D04561 /* GoogleService-Info.plist in Resources */,
 				AF32A303296A99C500C57B91 /* Assets.xcassets in Resources */,
@@ -188,6 +220,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5650CED4886E74A8430FBC48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grocery List - Munira-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAADBAFAC53D38C47A6982C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grocery List - Munira/Pods-Grocery List - Munira-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grocery List - Munira/Pods-Grocery List - Munira-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Grocery List - Munira/Pods-Grocery List - Munira-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF32A2F2296A99C400C57B91 /* Sources */ = {
@@ -198,11 +272,11 @@
 				AF32A2FA296A99C400C57B91 /* AppDelegate.swift in Sources */,
 				AF32A2FC296A99C400C57B91 /* SceneDelegate.swift in Sources */,
 				AF32A310296A9F0D00C57B91 /* FamilyList.swift in Sources */,
-				AF42C765296DEB2200D44EDF /* GroceryCell.swift in Sources */,
 				AF1EA257296B5BD1007F3C9F /* FamilyUsersCell.swift in Sources */,
 				AF32A30E296A9EE200C57B91 /* GroceryList.swift in Sources */,
 				AF592DCC296AE51600D04561 /* GroceryListCell.swift in Sources */,
 				AF1EA24A296AFF7B007F3C9F /* Data.swift in Sources */,
+				AFE5CC81296F081F0092C214 /* SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +418,11 @@
 		};
 		AF32A30B296A99C500C57B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618B76BA13C8CEDF5E228FDF /* Pods-Grocery List - Munira.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Grocery List - Munira/Grocery List - Munira.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -373,9 +449,11 @@
 		};
 		AF32A30C296A99C500C57B91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7053C0306586307FABD82DF /* Pods-Grocery List - Munira.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Grocery List - Munira/Grocery List - Munira.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
